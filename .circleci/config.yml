@@ -38,14 +38,14 @@ jobs:
       - run:
           command: npm run ci:test
           name: Run Jest test
-workflows:
-  devops_flow:
-    jobs:
-      - test
-      # - build-and-push:
-      #     # filters:
-      #     #   branches:
-      #     #     only:
-      #     #       - main
-      #     requires:
-      #       - test
+# workflows:
+#   devops_flow:
+#     jobs:
+# - test
+# - build-and-push:
+#     # filters:
+#     #   branches:
+#     #     only:
+#     #       - main
+#     requires:
+#       - test
