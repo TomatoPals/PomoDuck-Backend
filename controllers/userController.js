@@ -22,7 +22,11 @@ module.exports = {
   },
   findById: async (req, res) => {
     try {
-      const allUsers = await db.User.findAll(req.params.id);
+      const allUsers = await db.User.findAll({
+        where: {
+          id: req.params.id
+        }
+      });
       res.json(allUsers);
     } catch (error) {
       res.status(422).json(error);
