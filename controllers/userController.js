@@ -12,17 +12,33 @@ module.exports = {
       res.status(422).json(error);
     }
   },
-  findAll: async (req, res) => {
+  findById: async (req, res) => {
     try {
-      const allUsers = await db.User.findAll({});
+      const allUsers = await db.User.findAll({
+        where: {
+          id: req.params.id
+        }
+      });
       res.json(allUsers);
     } catch (error) {
       res.status(422).json(error);
     }
   },
-  findById: async (req, res) => {
+  remove: async (req, res) => {
     try {
-      const allUsers = await db.User.findAll({
+      const allUsers = await db.User.destroy({
+        where: {
+          id: req.params.id
+        }
+      });
+      res.json(allUsers);
+    } catch (error) {
+      res.status(422).json(error);
+    }
+  },
+  update: async (req, res) => {
+    try {
+      const allUsers = await db.User.update(req.body, {
         where: {
           id: req.params.id
         }
