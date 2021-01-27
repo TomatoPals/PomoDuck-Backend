@@ -2,7 +2,7 @@
   "name": "pomoduck-backend",
   "version": "1.0.0",
   "description": "pomoduck-backend",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "ci:test": "jest --ci --coverage && codecov"
