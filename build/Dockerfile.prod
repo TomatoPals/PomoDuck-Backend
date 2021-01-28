@@ -1,19 +1,19 @@
-FROM node:14 AS build
+FROM node:14 
 
 WORKDIR /app
 
 COPY package*.json ./
 
+RUN npm install
+
 RUN npm ci --only=production
 
 COPY . .
 
-FROM gcr.io/distroless/nodejs:14
+EXPOSE 3001
 
-COPY --from=build /app /app
+ENV NODE_ENV production
 
-WORKDIR /app
-
-EXPOSE 3000
+ENV DB_URL=$DB_URL
 
 CMD ["npm", "start"]
