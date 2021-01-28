@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
+const memorystore = require("memorystore")(session);
 const cors = require("cors");
 const db = require("./models");
 const routes = require("./routes");
@@ -14,7 +15,12 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+  session({
+    secret: "keyboard cat",
+    resave: true,
+    saveUninitialized: true,
+    store: new memorystore({ checkPeriod: 86400000 })
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -23,10 +29,6 @@ app.use(routes);
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+    console.log(" Listening on port %s", PORT, PORT);
   });
 });
