@@ -1,16 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
 const cors = require("cors");
-
-const passport = require("./config/passport");
-require("dotenv").config();
-
 const db = require("./models");
 const routes = require("./routes");
-
+const passport = require("./config/passport");
 const PORT = process.env.PORT || 3001;
-
 const app = express();
+
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
