@@ -1,3 +1,8 @@
+ifneq (,$(wildcard ./.env))
+    include .env
+    export
+endif
+
 build-dev:
 	docker build -t pomoduck-backend:v0.1.0-dev -f build/Dockerfile.dev .
 build-prod:
