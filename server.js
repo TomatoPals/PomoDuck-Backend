@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
-const memorystore = require("memorystore")(session);
+const MemoryStore = require("memorystore")(session);
 const cors = require("cors");
 const db = require("./models");
 const routes = require("./routes");
@@ -19,7 +19,7 @@ app.use(
     secret: "keyboard cat",
     resave: true,
     saveUninitialized: true,
-    store: new memorystore({ checkPeriod: 86400000 })
+    store: new MemoryStore({ checkPeriod: 60000 })
   })
 );
 app.use(passport.initialize());
