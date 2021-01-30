@@ -15,10 +15,7 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
-    username_prod: "root",
-    password_prod: process.env.mysql_root_password,
-    database_prod: process.env.mysql_database,
-    host: process.env.database_url,
+    db_connection: process.env.DB_CONNECTION,
     dialect: "mysql"
   }
 };
