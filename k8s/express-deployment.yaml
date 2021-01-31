@@ -37,3 +37,10 @@ spec:
   ports:
     - port: 3001
       targetPort: 3001
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: express-configmap
+data:
+  EXPRESS_SERVICE: express-service
