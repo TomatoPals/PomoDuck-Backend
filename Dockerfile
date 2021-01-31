@@ -14,6 +14,4 @@ EXPOSE 3001
 
 ENV NODE_ENV production
 
-ENV DB_URL=$DB_URL
-
 CMD ["npm", "start"]
