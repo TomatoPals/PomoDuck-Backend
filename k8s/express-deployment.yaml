@@ -13,6 +13,7 @@ spec:
     spec:
       containers:
         - name: pomoduck-backend
+          imagePullPolicy: Always
           image: "registry.digitalocean.com/pomoduck/pomoduck-backend:v0.1.0-prod"
           resources:
             limits:
