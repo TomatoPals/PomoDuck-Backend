@@ -14,13 +14,13 @@ spec:
       containers:
         - name: pomoduck-backend
           imagePullPolicy: Always
-          image: "registry.digitalocean.com/pomoduck/pomoduck-backend:v0.1.0-prod"
+          image: "registry.digitalocean.com/pomoduck/pomoduck-backend:v0.1.1-prod"
           resources:
             limits:
               memory: "512Mi"
               cpu: "500m"
           ports:
-            - containerPort: 3001
+            - containerPort: 80
           env:
             - name: DB_CONNECTION
               valueFrom:
@@ -35,13 +35,14 @@ metadata:
 spec:
   selector:
     app: pomoduck-backend
+  type: LoadBalancer
   ports:
-    - port: 3001
-      targetPort: 3001
+    - port: 80
+      targetPort: 80
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: express-configmap
 data:
-  EXPRESS_SERVICE: express-service
+  EXPRESS_SERVICE: express-service.default.svc.cluster.local
