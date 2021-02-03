@@ -7,7 +7,7 @@ module.exports = {
         email: req.body.email,
         password: req.body.password
       });
-      res.json(newUser);
+      res.json({ email: newUser.email, id: newUser.id });
     } catch (error) {
       res.status(422).json(error);
     }
