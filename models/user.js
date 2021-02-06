@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
       password: {
         type: DataTypes.STRING,
         allowNull: false
-      }, 
+      },
       country: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -37,11 +37,6 @@ module.exports = function (sequelize, DataTypes) {
         defaultValue: null
       },
       aliasImage: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: null
-      },
-      country: {
         type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null
