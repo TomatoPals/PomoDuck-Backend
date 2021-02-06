@@ -47,9 +47,9 @@ module.exports = function (sequelize, DataTypes) {
         defaultValue: null
       },
       displayPref: {
-        type: DataTypes.TEXT('tiny'),
+        type: DataTypes.BIGINT,
         allowNull: true,
-        defaultValue: null
+        defaultValue: 1
       },
       pomTime: {
         type: DataTypes.BIGINT,
