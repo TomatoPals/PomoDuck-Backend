@@ -1,5 +1,12 @@
 module.exports = {
   logout: (req, res) => {
-    req.logout();
+    try {
+      req.logout();
+      res.json({
+        message: "logout successful"
+      });
+    } catch (error) {
+      res.status(422).json(error);
+    }
   }
 };
