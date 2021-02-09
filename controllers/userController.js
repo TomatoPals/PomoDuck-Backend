@@ -10,7 +10,6 @@ module.exports = {
       country,
       alias,
       aliasImage,
-      country,
       displayPref,
       pomTime,
       smallBreakTime,
