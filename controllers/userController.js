@@ -30,7 +30,12 @@ module.exports = {
         smallBreakTime,
         bigBreakTime
       });
-      res.json({ email: newUser.email, id: newUser.id });
+      res.json({
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+        id: newUser.id
+      });
     } catch (error) {
       res.status(422).json(error);
     }
