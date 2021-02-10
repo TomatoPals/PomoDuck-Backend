@@ -2,12 +2,35 @@ const db = require("../models");
 
 module.exports = {
   create: async (req, res) => {
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      country,
+      alias,
+      aliasImage,
+      displayPref,
+      pomTime,
+      smallBreakTime,
+      bigBreakTime
+    } = req.body;
+
     try {
       const newUser = await db.User.create({
-        email: req.body.email,
-        password: req.body.password
+        firstName,
+        lastName,
+        email,
+        password,
+        country,
+        alias,
+        aliasImage,
+        displayPref,
+        pomTime,
+        smallBreakTime,
+        bigBreakTime
       });
-      res.json(newUser);
+      res.json({ email: newUser.email, id: newUser.id });
     } catch (error) {
       res.status(422).json(error);
     }

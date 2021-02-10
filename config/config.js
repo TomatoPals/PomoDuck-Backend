@@ -15,7 +15,7 @@ module.exports = {
     dialect: "mysql"
   },
   production: {
-    prod_url: process.env.DB_URL,
+    db_connection: process.env.DB_CONNECTION,
     dialect: "mysql"
   }
 };
