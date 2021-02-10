@@ -2,6 +2,8 @@ module.exports = {
   authenticate: (req, res) => {
     try {
       res.json({
+        firstName: req.user.dataValues.firstName,
+        lastName: req.user.dataValues.lastName,
         email: req.user.dataValues.email,
         id: req.user.dataValues.id
       });
