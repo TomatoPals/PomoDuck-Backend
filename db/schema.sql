@@ -8,7 +8,7 @@ CREATE TABLE User (
     email VARCHAR(128) COLLATE UTF8_UNICODE_CI NOT NULL,
     password VARCHAR(255) NOT NULL,
     country VARCHAR(128) COLLATE UTF8_UNICODE_CI DEFAULT NULL,
-    alias VARCHAR(200) COLLATE UTF8_UNICODE_CI NOT NULL,
+    alias VARCHAR(200) COLLATE UTF8_UNICODE_CI DEFAULT NULL,
     aliasImage VARCHAR(255) COLLATE UTF8_UNICODE_CI DEFAULT NULL,
     displayPref TINYINT(3) DEFAULT '0',
     pomTime INT(11) DEFAULT '25',
@@ -28,8 +28,12 @@ CREATE TABLE Task (
     completedPoms TINYINT(3) DEFAULT '0',
     completedSmallBreak  TINYINT(3) DEFAULT '0',
     completedBigBreak  TINYINT(3) DEFAULT '0',
-    
+    pomMinutes  SMALLINT DEFAULT '0',
+    smallBreakMinutes SMALLINT DEFAULT '0',
+    bigBreakMinutes  SMALLINT DEFAULT '0',
     isComplete TINYINT(3) DEFAULT '0',
+    startDate DATETIME DEFAULT NULL,
+    completeDate DATETIME DEFAULT NULL,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME DEFAULT NULL,
     PRIMARY KEY (id)
