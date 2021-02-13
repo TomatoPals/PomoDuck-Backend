@@ -5,7 +5,10 @@ module.exports = {
         firstName: req.user.dataValues.firstName,
         lastName: req.user.dataValues.lastName,
         email: req.user.dataValues.email,
-        id: req.user.dataValues.id
+        id: req.user.dataValues.id,
+        pomTime: req.user.dataValues.pomTime,
+        smallBreakTime: req.user.dataValues.smallBreakTime,
+        bigBreakTime: req.user.dataValues.bigBreakTime
       });
     } catch (error) {
       res.status(422).json(error);
