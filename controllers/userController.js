@@ -11,6 +11,9 @@ module.exports = {
       alias,
       aliasImage,
       displayPref,
+      totalPomSeconds,
+      totalSmallBreakSeconds,
+      totalBigBreakSeconds,
       pomTime,
       smallBreakTime,
       bigBreakTime
@@ -26,6 +29,9 @@ module.exports = {
         alias,
         aliasImage,
         displayPref,
+        totalPomSeconds,
+        totalSmallBreakSeconds,
+        totalBigBreakSeconds,
         pomTime,
         smallBreakTime,
         bigBreakTime
@@ -34,7 +40,10 @@ module.exports = {
         firstName: newUser.firstName,
         lastName: newUser.lastName,
         email: newUser.email,
-        id: newUser.id
+        id: newUser.id,
+        totalPomSeconds: newUser.totalPomSeconds,
+        totalSmallBreakSeconds: newUser.totalSmallBreakSeconds,
+        totalBigBreakSeconds: newUser.totalBigBreakSeconds
       });
     } catch (error) {
       res.status(422).json(error);
