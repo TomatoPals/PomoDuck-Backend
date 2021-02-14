@@ -1,4 +1,5 @@
 const db = require("../models");
+const bcrypt = require("bcryptjs");
 
 module.exports = {
   create: async (req, res) => {
@@ -80,6 +81,28 @@ module.exports = {
           id: req.params.id
         }
       });
+      res.json(allUsers);
+    } catch (error) {
+      res.status(422).json(error);
+    }
+  },
+  updateProfile: async (req, res) => {
+    try {
+      const { firstName, lastName, email, password } = req.body;
+      const allUsers = await db.User.update(
+        {
+          firstName,
+          lastName,
+          email,
+          password: bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
+        },
+        {
+          where: {
+            id: req.params.id
+          }
+        }
+      );
+      console.log(allUsers);
       res.json(allUsers);
     } catch (error) {
       res.status(422).json(error);
