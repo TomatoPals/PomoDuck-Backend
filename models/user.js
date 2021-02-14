@@ -46,6 +46,21 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
         defaultValue: 1
       },
+      totalPomSeconds: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0
+      },
+      totalSmallBreakSeconds: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0
+      },
+      totalBigBreakSeconds: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        defaultValue: 0
+      },
       pomTime: {
         type: DataTypes.BIGINT,
         allowNull: true,
@@ -81,5 +96,6 @@ module.exports = function (sequelize, DataTypes) {
       null
     );
   });
+
   return User;
 };
