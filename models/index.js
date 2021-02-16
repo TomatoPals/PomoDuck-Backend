@@ -8,8 +8,11 @@ var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.js")[env];
 var db = {};
 
-if (config.prod_url) {
-  var sequelize = new Sequelize(config.prod_url, config);
+if (process.env.NODE_ENV === "production") {
+  var sequelize = new Sequelize(
+    config.db_connection,
+    config
+  );
 } else {
   var sequelize = new Sequelize(
     config.database,
