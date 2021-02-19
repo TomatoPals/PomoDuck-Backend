@@ -64,7 +64,7 @@ module.exports = function (sequelize, DataTypes) {
       pomTime: {
         type: DataTypes.BIGINT,
         allowNull: true,
-        defaultValue: 15
+        defaultValue: 25
       },
       smallBreakTime: {
         type: DataTypes.BIGINT,

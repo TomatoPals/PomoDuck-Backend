@@ -15,32 +15,12 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.BIGINT,
         allowNull: false
       },
-      completedPoms: {
-        type: DataTypes.BIGINT,
-        allowNull: true,
-        defaultValue: 0
-      },
-      completedSmallBreak: {
-        type: DataTypes.BIGINT,
-        allowNull: true,
-        defaultValue: 0
-      },
-      completedBigBreak: {
-        type: DataTypes.BIGINT,
-        allowNull: true,
-        defaultValue: 0
-      },
-      pomMinutes: {
+      pomSeconds: {
         type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: 0
       },
-      smallBreakMinutes: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        defaultValue: 0
-      },
-      bigBreakMinutes: {
+      breakSeconds: {
         type: DataTypes.INTEGER,
         allowNull: true,
         defaultValue: 0
