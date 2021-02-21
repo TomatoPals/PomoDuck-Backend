@@ -26,9 +26,9 @@ module.exports = function (sequelize, DataTypes) {
         defaultValue: 0
       },
       isComplete: {
-        type: DataTypes.BIGINT,
+        type: DataTypes.BOOLEAN,
         allowNull: true,
-        defaultValue: 0
+        defaultValue: false
       },
       startDate: {
         type: DataTypes.DATE,
