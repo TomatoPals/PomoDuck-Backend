@@ -14,11 +14,7 @@ spec:
       containers:
         - name: pomoduck-backend
           imagePullPolicy: Always
-          image: "registry.digitalocean.com/pomoduck/pomoduck-backend:v0.1.2-prod"
-          resources:
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
+          image: "registry.digitalocean.com/pomoduck/pomoduck-backend:v1.0.0-prod"
           ports:
             - containerPort: 3001
           env:
