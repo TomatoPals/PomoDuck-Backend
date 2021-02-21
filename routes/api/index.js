@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const userRoute = require("./user");
-const loginRoute = require("./login");
+const taskRoute = require("./task");
+const userSession = require("./userSession");
 
 router.use("/user", userRoute);
-router.use("/login", loginRoute);
+router.use("/userSession", userSession);
+router.use("/task", taskRoute);
 
 module.exports = router;

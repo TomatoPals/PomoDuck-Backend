@@ -1,4 +1,4 @@
-FROM node:14 
+FROM node:lts-alpine3.10
 
 WORKDIR /app
 
@@ -10,10 +10,8 @@ RUN npm ci --only=production
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 80
 
 ENV NODE_ENV production
-
-ENV DB_URL=$DB_URL
 
 CMD ["npm", "start"]
