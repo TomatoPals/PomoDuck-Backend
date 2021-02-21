@@ -25,6 +25,21 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
         defaultValue: 0
       },
+      completedPoms: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+        defaultValue: 0
+      },
+      completedSmallBreak: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+        defaultValue: 0
+      },
+      completedBigBreak: {
+        type: DataTypes.BIGINT,
+        allowNull: true,
+        defaultValue: 0
+      },
       isComplete: {
         type: DataTypes.BOOLEAN,
         allowNull: true,
